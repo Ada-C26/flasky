@@ -1,7 +1,11 @@
 # place in a top-level file. call it something like seed.py
+from dotenv import load_dotenv
 
 from app import create_app, db
 from app.models.cat import Cat
+
+load_dotenv()
+
 
 my_app = create_app()
 with my_app.app_context():
