@@ -3,6 +3,7 @@ import os
 from flask import Flask
 from .db import db, migrate
 from .routes.cat_routes import bp as cats_bp
+from .routes.caretaker_routes import bp as caretakers_bp
 
 def create_app(config=None):
     # __name__ stores the name of the module we're in
@@ -18,5 +19,6 @@ def create_app(config=None):
     migrate.init_app(app, db)
 
     app.register_blueprint(cats_bp)
+    app.register_blueprint(caretakers_bp)
 
     return app
